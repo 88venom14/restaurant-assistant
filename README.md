@@ -39,7 +39,7 @@ npm run electron:dev
 
 ---
 
-## 🛠️ Технологии
+## Технологии
 
 | Компонент | Технология |
 |-----------|------------|
@@ -51,7 +51,7 @@ npm run electron:dev
 
 ---
 
-## 📦 Структура проекта
+## Структура проекта
 
 ```
 restaurant-assistant-go-ss/
@@ -87,7 +87,7 @@ restaurant-assistant-go-ss/
 
 ---
 
-## ⌨️ Скрипты
+## Скрипты
 
 ```bash
 # Разработка (веб)
@@ -99,9 +99,9 @@ npm run build
 # Запуск (веб)
 npm run start
 
-# Разработка (Electron)
+# Разработка
 npm run electron:dev
 
-# Сборка (Electron .exe)
+# Сборка (.exe)
 npm run electron:build:win
 ```
