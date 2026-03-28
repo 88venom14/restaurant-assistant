@@ -105,3 +105,5 @@ npm run electron:dev
 # Сборка (.exe)
 npm run electron:build:win
 ```
+
+[скачать exe загрузчик](https://disk.yandex.ru/d/_EAcLVYKtjP90g)
