@@ -1,0 +1,76 @@
+{
+  "name": "restaurant-assistant",
+  "version": "1.0.0",
+  "description": "Приложение для подбора ресторанов через 2GIS API",
+  "main": "electron/main.js",
+  "author": "Restaurant Assistant Team",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "electron:dev": "cross-env NODE_ENV=development concurrently -k \"npm run dev\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron:build": "npm run build && cross-env NODE_ENV=production electron-builder",
+    "electron:build:win": "npm run build && cross-env NODE_ENV=production electron-builder --win"
+  },
+  "build": {
+    "appId": "com.restaurant.assistant",
+    "productName": "Restaurant Assistant",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "electron/**/*",
+      ".next/**/*",
+      "public/**/*",
+      "node_modules/**/*",
+      "package.json",
+      "next.config.js",
+      ".env.local",
+      "icon.ico"
+    ],
+    "extraResources": [
+      {
+        "from": ".env.local.example",
+        "to": ".env.local.example"
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Restaurant Assistant",
+      "runAfterFinish": true
+    },
+    "extraMetadata": {
+      "main": "electron/main.js"
+    }
+  },
+  "dependencies": {
+    "next": "14.2.3",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
+    "electron": "^41.1.0",
+    "electron-builder": "^26.8.1",
+    "electron-reload": "^2.0.0-alpha.1",
+    "typescript": "^5",
+    "wait-on": "^9.0.4"
+  }
+}

@@ -1,0 +1,14 @@
+# Electron
+dist/
+out/
+
+# Next.js
+.next/
+*.log
+
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
